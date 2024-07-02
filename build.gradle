@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot'            version '3.3.1'
+    id 'io.spring.dependency-management'     version '1.1.5'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+    runtimeOnly    'org.postgresql:postgresql'
+
+    implementation 'org.jmolecules.integrations:jmolecules-integrations:0.20.0'
+    implementation 'org.jmolecules.integrations:jmolecules-starter-ddd:0.20.0'
+    implementation 'org.jmolecules.integrations:jmolecules-spring:0.20.0'
+
+    // Lombok
+    compileOnly         "org.projectlombok:lombok:1.18.30"
+    annotationProcessor "org.projectlombok:lombok:1.18.30"
+
+
+    // Test framework
+    implementation 'org.springframework.boot:spring-boot-starter-test'
+    runtimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    // Lombok
+    testCompileOnly         "org.projectlombok:lombok:1.18.30"
+    testAnnotationProcessor "org.projectlombok:lombok:1.18.30"
+}
+
+test {
+    useJUnitPlatform()
+}
