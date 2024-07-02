@@ -21,7 +21,6 @@ public class Demo {
        var fooTargetType = jdbcCustomConversions.getCustomWriteTarget(FooId.class).orElseThrow();
 
        // One of this assertion is failing as the same target type is returned for all Identifier objects.
-       //
        assertEquals(barTargetType, UUID.class);
        assertEquals(fooTargetType, String.class);
     }
